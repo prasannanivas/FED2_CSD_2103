@@ -1,0 +1,91 @@
+/* main.css for the home page */
+body {
+    font-family: cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background: linear-gradient(45deg, #ff3923, #760638);
+    color: #fff;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+header p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+/* Main content layout */
+.content {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+}
+
+.main-column {
+    flex: 2;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.main-column h2 {
+    font-size: 24px;
+}
+
+.float-left {
+    float: left;
+}
+
+.sidebar {
+    flex: 1;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.sidebar ul {
+    flex-direction: column;
+    background-color: linear-gradient(45deg, #ff3923, #760638);
+}
+
+.sidebar h3 {
+    font-size: 18px;
+    color: black;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #010400;
+}
+
+ul li {
+    margin: 10px;
+
+}
+
+a{
+text-decoration: none;
+background-color: #f5f5f5;
+color: black;
+padding: 5px;
+border-radius: 5%;
+}
+
+footer {
+    background: linear-gradient(45deg, #ff3923, #760638);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+}
