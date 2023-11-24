@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Currency Converter</title>
+    <style>
+      input[type="text"] {
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      /* Center align elements */
+
+      .converter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      label{
+        background-color: blanchedalmond;
+        height: 20px;
+        padding: 20px;
+      }
+      
+      button {
+        display: block;
+        text-align: center;
+      }
+
+      /* Style paragraph for result */
+      #result {
+        margin-top: 20px;
+        padding: 12px 20px;
+        text-align: center;
+        font-size: 1.2em;
+      }
+
+      /* Style heading */
+      h1,
+      h2 {
+        text-align: center;
+      }
+
+      header {
+        background-color: rgb(68, 68, 213);
+        color: white;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>US Dollar to Canadian Dollar</h1>
+      <h2>Convert USD to CAD at the real exchange rate</h2>
+    </header>
+
+    <div class="converter">
+      <input type="text" id="canadian" name="canadian" />
+      <label for="canadian">CAD 🍁</label>
+
+      
+      <input type="text" id="us" name="us" />
+      <label for="us">USD </label>
+    </div>
+
+    <div class="converter">
+
+        <button onclick="convertToUS()">Convert to US</button>
+    </div>
+   
+
+    <p id="result"></p>
+
+    <script>
+    
+
+      function convertToUS() {
+
+        const canadianDollars = document.getElementById("canadian").value;
+        const usDollars = canadianDollars * 0.73; 
+
+        document.getElementById("result").innerHTML =
+          canadianDollars + " CAD = " + usDollars.toFixed(3) + " USD";
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Race Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        div {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Car Race Simulation</h1>
+
+<div id="output"></div>
+
+<script defer>
+    class Car {
+        constructor(brand, model, year, color, price, gas) {
+            this.brand = brand;
+            this.model = model;
+            this.year = year;
+            this.color = color;
+            this.price = price;
+            this.gas = gas;
+        }
+
+        honk() {
+            const output = document.getElementById('output');
+            output.innerHTML += `<div>Tuut tuut<br>Brand: ${this.brand}, Model: ${this.model}, Year: ${this.year}, Color: ${this.color}, Price: $${this.price}</div>`;
+        }
+
+        race(turns) {
+            const output = document.getElementById('output');
+            for (let turn = 1; turn <= turns; turn++) {
+                this.loseGas();
+                output.innerHTML += `<div>Turn ${turn}: ${this.brand} - Remaining Gas: ${this.gas} liters</div>`;
+            }
+        }
+
+        loseGas() {
+            const gasLossPerTurn = 5;
+            const additionalGasLossPerYear = this.isNew() ? 0 : (new Date().getFullYear() - this.year) * 1;
+            this.gas -= gasLossPerTurn + additionalGasLossPerYear;
+            this.gas = Math.max(this.gas, 0);
+        }
+
+        isNew() {
+            return this.year === new Date().getFullYear();
+        }
+    }
+
+
+    const car1 = new Car("Honda", "CR-V", 2023, "Red", 50000, 45);
+    const car2 = new Car("Ford", "F-150", 2020, "Black", 25000, 30);
+    const car3 = new Car("BMW", "X5", 2022, "Green", 60000, 65);
+    const car4 = new Car("Mazda", "CX-5", 2019, "White", 15000, 60);
+    const car5 = new Car("Audi", "Q7", 2018, "Silver", 52000, 47);
+    const car6 = new Car("Kia", "Forte", 2020, "Blue", 21000, 56);
+
+
+    car1.honk();
+    car2.honk();
+    car3.honk();
+    car4.honk();
+    car5.honk();
+    car6.honk();
+
+
+    const output = document.getElementById('output');
+    output.innerHTML += '<h2>Race Simulation</h2>';
+    car1.race(7);
+    car2.race(7);
+    car3.race(7);
+    car4.race(7);
+    car5.race(7);
+    car6.race(7);
+</script>
+
+</body>
+</html>
